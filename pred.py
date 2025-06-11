@@ -17,7 +17,7 @@ def minmax_norm(vector):
     return vector
 
 WHITELIST = [
-    "gob.pe", "sunat.gob.pe", "essalud.gob.pe", "minsa.gob.pe", "minedu.gob.pe", 
+    "chatgpt.com","gob.pe", "sunat.gob.pe", "essalud.gob.pe", "minsa.gob.pe", "minedu.gob.pe", 
     "reniec.gob.pe", "pnpcp.gob.pe", "sis.gob.pe", "elperuano.pe", "pnp.gob.pe", 
     "peru.gob.pe", "onpe.gob.pe", "inei.gob.pe", "servir.gob.pe", "sunedu.gob.pe", 
     "essaludvirtual.gob.pe", "rnp.gob.pe", "midagri.gob.pe", "andina.pe",
