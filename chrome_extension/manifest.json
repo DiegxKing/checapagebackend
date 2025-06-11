@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "Detector de Phishing en Tiempo Real",
+  "version": "1.0",
+  "permissions": ["tabs", "scripting", "activeTab", "storage"],
+  "host_permissions": ["<all_urls>"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "hello.html",
+    "default_icon": {
+      "16": "icon_checa_page_completo.png"
+    }
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["overlay.js"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}
