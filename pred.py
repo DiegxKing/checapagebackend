@@ -3,7 +3,7 @@ import random
 import re
 import pickle
 import numpy as np
-from keras.models import load_model
+from tensorflow.keras.models import load_model
 from varsRF import armarVecRF
 from varsCNN import armarVecCNN
 from db_mysql import guardar_deteccion_mysql
