@@ -1,20 +1,21 @@
 FROM python:3.8-slim
 
-# Evitar conflictos resolviendo todo con pip a la vez
-COPY requirements.txt /app/requirements.txt
 WORKDIR /app
 
-# Instala compiladores necesarios
+# Dependencias del sistema necesarias para instalar paquetes científicos
 RUN apt-get update && apt-get install -y \
     build-essential \
     gfortran \
     python3-dev \
- && rm -rf /var/lib/apt/lists/*
+    && rm -rf /var/lib/apt/lists/*
 
-# Actualiza pip y resuelve dependencias en una sola instrucción
-RUN pip install --upgrade pip \
- && pip install --no-cache-dir -r requirements.txt
+# Copiamos los archivos
+COPY requirements.txt .
 
-COPY . /app
+# Instalación de dependencias (pip actualizado y sin caché)
+RUN pip install --upgrade pip && \
+    pip install --no-cache-dir -r requirements.txt
+
+COPY . .
 
 CMD ["python", "app.py"]
